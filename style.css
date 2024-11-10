@@ -1,0 +1,147 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container {
+    background:#000;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:1000px;
+    margin:auto;
+    padding-top:10px;
+}
+.container header img {
+    width: 70px;
+}
+.container ul li {
+    display: inline-block;
+    position: relative;
+}
+.container ul li::after {
+    content:"";
+    position: absolute;
+    width:100%;
+    bottom:-6px;
+    background:white;
+    height: 2px;
+    left:0;
+    display: none;
+}
+.container ul li:hover::after {
+    display: block;
+}
+.container ul li:not(:first-child) {
+    margin-left: 20px;
+}
+.container li a {
+    color:white;
+    text-decoration: none;
+}
+.content {
+    display: flex;
+    color:white;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    margin:auto;
+}
+.content .text {
+    width:400px;
+}
+.content img {
+    width:200px; 
+}
+.content h2 {
+    text-transform: uppercase;
+}
+.content p {
+    margin:25px 0;
+}
+.content a {
+    color:white;
+    border:1px solid white; 
+    padding:10px;
+    border-radius:20px;
+    text-decoration: none;
+}
+.icons div {
+    cursor: pointer;
+}
+.icons div:hover img {
+    transform: scale(1.2);
+}
+.icons img {
+    width:40px;
+    transition: .3s;
+}
+.icons {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+@media (width < 1050px) {
+    header ,
+    .content {
+        width:800px !important;
+    }
+}
+@media (width < 850px) {
+    header ,
+    .content {
+        width:600px !important;
+    }
+}
+@media (width < 650px) {
+    header ,
+    .content {
+        width:500px !important;
+    }
+}
+
+@media (width < 550px) {
+    header {
+        flex-direction: column;
+        width:100% !important;
+        gap:20px
+    }
+    header ul {
+        display: flex;
+        justify-content: space-evenly;
+        width:100%;
+    }
+    li {
+        margin:0 !important;
+    }
+    .content {
+        width:fit-content;
+        flex-direction: column;
+        width: 100% !important;
+    }
+    .content .text {
+        order: 1;
+        text-align: center;
+    }
+    .content img {
+        order:2;
+        width:150px
+    }
+    .content p {
+        margin:10px 0;
+    }
+    .content a {
+        display: block;
+        width: fit-content;
+        margin:auto;
+    }
+}
